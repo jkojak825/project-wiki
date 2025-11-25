@@ -20,7 +20,8 @@ nav:
       - Roadmap: stakeholders/roadmap.md
       - Milestones: stakeholders/milestones.md
       - Kanban: stakeholders/kanban.md
-  - Logs: logs/
+  - Logs:
+    - 2025-11-25: logs/2025-11-25.md
   - Tags: tags.md
 
 plugins:
