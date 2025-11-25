@@ -1,0 +1,31 @@
+site_name: My App Wiki
+nav:
+  - Home: index.md
+  - Setup:
+      - Windows: setup/windows.md
+      - Mint: setup/mint.md
+      - Remote Access: setup/remote-access.md
+  - Development:
+      - Architecture: development/architecture.md
+      - Workflows: development/workflows.md
+      - Modules: development/modules.md
+  - Troubleshooting:
+      - Wi-Fi Driver: troubleshooting/wifi-driver.md
+      - DKMS: troubleshooting/dkms.md
+      - Kernel: troubleshooting/kernel.md
+  - Journaling:
+      - Reading Journal: journaling/reading-journal.md
+      - PDF Export: journaling/pdf-export.md
+  - Stakeholders:
+      - Roadmap: stakeholders/roadmap.md
+      - Milestones: stakeholders/milestones.md
+      - Kanban: stakeholders/kanban.md
+  - Logs:
+      - 2025-11-25: logs/2025-11-25.md
+
+
+theme:
+  name: material
+
+dev_addr: 0.0.0.0:8000
+
