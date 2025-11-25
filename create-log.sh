@@ -1,53 +1,67 @@
 #!/bin/bash
-# create-log.sh
+# create-log.sh — create a new log entry and rebuild MkDocs .pages navigation
 
-DATE=$(date +%F)
-FILE="docs/logs/${DATE}.md"
+DATE=$(date +%Y-%m-%d)
+YEAR=$(date +%Y)
+MONTH=$(date +%m)
+MONTH_NAME=$(date +%B)
 
-# Ensure logs folder exists
-mkdir -p docs/logs
+FOLDER="docs/logs/$YEAR/$MONTH"
+FILE="$FOLDER/$DATE.md"
 
-# Create the log file if it doesn't exist
+# Ensure year/month folders exist
+mkdir -p "$FOLDER"
+
+# Create new log file with structured template if it doesn't exist
 if [ ! -f "$FILE" ]; then
   cat <<EOF > "$FILE"
-# Daily Log – $DATE
+# Log for $DATE
+# Log for $DATE
 
-## Tasks Completed
-- [ ] Brief bullet points of what you worked on
-- [ ] Include commands, configs, or code snippets if relevant
+## Tasks
+- 
 
-## Issues Encountered
-- Describe any errors, failures, or unexpected behavior
-- Note logs, error messages, or system outputs
+## Issues
+- 
 
-## Solutions / Workarounds
-- Steps taken to resolve issues
-- Fallback strategies or recovery scripts used
+## Solutions
+- 
 
 ## Next Steps
-- What you plan to tackle tomorrow
-- Dependencies or blockers to keep in mind
+- 
 
-## Notes & Reflections
-- Insights gained, lessons learned
-- Stakeholder communication or documentation updates
+## Notes
+- 
 EOF
-  echo "Created new log: $FILE"
-fi
-
-# Insert into mkdocs.yml nav if not already present
-if ! grep -q "$DATE" mkdocs.yml; then
-  # Use awk to insert new entry immediately after "  - Logs:" line
-  awk -v date="$DATE" '
-    /^  - Logs:/ {
-      print $0
-      print "      - " date ": logs/" date ".md"
-      next
-    }
-    {print}
-  ' mkdocs.yml > mkdocs.yml.tmp && mv mkdocs.yml.tmp mkdocs.yml
-
-  echo "Added $DATE to mkdocs.yml nav (at top of Logs)"
+  echo "Created new log with template: $FILE"
 else
-  echo "Log $DATE already in mkdocs.yml nav"
+  echo "Log already exists: $FILE"
 fi
+
+# --- Rebuild month .pages ---
+MONTH_PAGES="$FOLDER/.pages"
+echo "title: $MONTH_NAME $YEAR" > "$MONTH_PAGES"
+echo "nav:" >> "$MONTH_PAGES"
+for entry in $(ls "$FOLDER"/*.md | sort); do
+  fname=$(basename "$entry")
+  echo "  - $fname" >> "$MONTH_PAGES"
+done
+
+# --- Rebuild year .pages ---
+YEAR_PAGES="docs/logs/$YEAR/.pages"
+echo "title: $YEAR" > "$YEAR_PAGES"
+echo "nav:" >> "$YEAR_PAGES"
+for mdir in $(ls -d docs/logs/$YEAR/*/ | sort); do
+  mname=$(basename "$mdir")
+  echo "  - $mname/" >> "$YEAR_PAGES"
+done
+
+# --- Rebuild root .pages ---
+ROOT_PAGES="docs/logs/.pages"
+echo "title: Logs" > "$ROOT_PAGES"
+echo "nav:" >> "$ROOT_PAGES"
+for ydir in $(ls -d docs/logs/*/ | sort); do
+  yname=$(basename "$ydir")
+  echo "  - $yname/" >> "$ROOT_PAGES"
+done
+

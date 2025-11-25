@@ -1,36 +1,48 @@
 site_name: My App Wiki
 nav:
   - Home: index.md
-  - Setup:
-      - Windows: setup/windows.md
-      - Mint: setup/mint.md
-      - Remote Access: setup/remote-access.md
-  - Development:
-      - Architecture: development/architecture.md
-      - Workflows: development/workflows.md
-      - Modules: development/modules.md
+#  - Setup:
+#     - Windows: setup/windows.md
+#     - Mint: setup/mint.md
+#      - Remote Access: setup/remote-access.md
+#  - Development:
+#      - Architecture: development/architecture.md
+#      - Workflows: development/workflows.md
+#      - Modules: development/modules.md
   - Troubleshooting:
       - Wi-Fi Driver: troubleshooting/wifi-driver.md
       - DKMS: troubleshooting/dkms.md
       - Kernel: troubleshooting/kernel.md
-  - Journaling:
-      - Reading Journal: journaling/reading-journal.md
-      - PDF Export: journaling/pdf-export.md
+#  - Journaling:
+#      - Reading Journal: journaling/reading-journal.md
+#      - PDF Export: journaling/pdf-export.md
   - Stakeholders:
       - Roadmap: stakeholders/roadmap.md
       - Milestones: stakeholders/milestones.md
       - Kanban: stakeholders/kanban.md
-  - Logs:
-    - 2025-11-25: logs/2025-11-25.md
-  - Tags: tags.md
+#  - Tags: tags.md
 
-plugins:
-  - search
-  - awesome-pages
-  - tags
+#plugins:
+#  - search
+#  - awesome-pages
+#  - tags
+#  - mkdocs-simple-hooks
 
-theme:
-  name: material
+#theme:
+#  name: material
 
 dev_addr: 0.0.0.0:8000
 
+#extra_css: []
+#extra_javascript: []
+#extra_templates: []
+#docs_dir: docs
+#include_dir: docs/admin
+#extra_javascript:
+#  - admin/index.html
+#extra_css: []
+
+#extra_files:
+#  - docs/admin/netlify-cms.js
+#  - docs/admin/index.html
+#  - docs/admin/config.yml
