@@ -7,7 +7,13 @@
   </head>
   <body>
     <script>
-      NetlifyCmsApp.init();
+      // Sanity check: log whether NetlifyCmsApp is defined
+      if (typeof NetlifyCmsApp === "undefined") {
+        console.error("❌ NetlifyCmsApp is NOT defined. Check that netlify-cms.js is being served correctly.");
+      } else {
+        console.log("✅ NetlifyCmsApp is defined:", NetlifyCmsApp);
+        NetlifyCmsApp.init();
+      }
     </script>
   </body>
 </html>
