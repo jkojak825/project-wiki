@@ -6,6 +6,11 @@ media_folder: "docs/images"
 public_folder: "/images"
 
 collections:
+  - name: "slug"
+    label: "Slug"
+    widget: "string"
+    hint: "Unique identifier for filename"
+
   - name: "logs"
     label: "Logs"
     folder: "docs/logs"
@@ -29,6 +34,7 @@ collections:
     fields:
       - { name: "name", label: "Name", widget: "string" }
       - { name: "role", label: "Role", widget: "string" }
+      - { name: "slug", label: "Slug", widget: "string", hint: "Unique filename" }
       - { name: "tags", label: "Tags", widget: "relation", collection: "tags", search_fields: ["body"], value_field: "body", multiple: true, hint: "Choose categories from global taxonomy" }
       - { name: "responsibilities", label: "Responsibilities", widget: "list", default: [""] }
       - { name: "notes", label: "Notes", widget: "markdown" }
@@ -41,6 +47,7 @@ collections:
     fields:
       - { name: "title", label: "Title", widget: "string" }
       - { name: "tags", label: "Tags", widget: "relation", collection: "tags", search_fields: ["body"], value_field: "body", multiple: true, hint: "Choose categories from global taxonomy" }
+      - { name: "slug", label: "Slug", widget: "string", hint: "Unique filename" }
       - { name: "symptoms", label: "Symptoms", widget: "list", default: [""] }
       - { name: "root_cause", label: "Root Cause", widget: "markdown", default: "- " }
       - { name: "fixes", label: "Fixes", widget: "list", default: [""] }
@@ -54,6 +61,7 @@ collections:
     fields:
       - { name: "title", label: "Title", widget: "string" }
       - { name: "tags", label: "Tags", widget: "relation", collection: "tags", search_fields: ["body"], value_field: "body", multiple: true, hint: "Choose categories from global taxonomy" }
+      - { name: "slug", label: "Slug", widget: "string", hint: "Unique filename" }
       - { name: "objectives", label: "Objectives", widget: "list", default: [""] }
       - { name: "design", label: "Design Notes", widget: "markdown", default: "- " }
       - { name: "implementation", label: "Implementation Steps", widget: "list", default: [""] }
@@ -67,6 +75,7 @@ collections:
     fields:
       - { name: "title", label: "Title", widget: "string" }
       - { name: "tags", label: "Tags", widget: "relation", collection: "tags", search_fields: ["body"], value_field: "body", multiple: true, hint: "Choose categories from global taxonomy" }
+      - { name: "slug", label: "Slug", widget: "string", hint: "Unique filename" }
       - { name: "reflection", label: "Reflection", widget: "markdown", default: "- " }
       - { name: "insights", label: "Insights", widget: "list", default: [""] }
       - { name: "actions", label: "Actions", widget: "list", default: [""] }
@@ -79,6 +88,7 @@ collections:
     fields:
       - { name: "title", label: "Title", widget: "string" }
       - { name: "tags", label: "Tags", widget: "relation", collection: "tags", search_fields: ["body"], value_field: "body", multiple: true, hint: "Choose categories from global taxonomy" }
+      - { name: "slug", label: "Slug", widget: "string", hint: "Unique filename" }
       - { name: "prerequisites", label: "Prerequisites", widget: "list", default: [""] }
       - { name: "steps", label: "Setup Steps", widget: "list", default: [""] }
       - { name: "verification", label: "Verification", widget: "markdown", default: "- " }
