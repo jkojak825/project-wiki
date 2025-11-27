@@ -5,7 +5,17 @@
     <title>Content Manager</title>
   </head>
   <body>
-    <!-- Load Netlify CMS (pinned stable version) -->
-    <script src="https://unpkg.com/netlify-cms-app@2.10.192/dist/netlify-cms-app.js"></script>
+    <!-- Load Netlify CMS bundle from same origin -->
+    <script src="./netlify-cms.js"></script>
+
+    <!-- Initialize CMS -->
+    <script>
+      if (typeof NetlifyCmsApp === "undefined") {
+        console.error("❌ NetlifyCmsApp is NOT defined. Check that netlify-cms.js is being served correctly.");
+      } else {
+        console.log("✅ NetlifyCmsApp is defined:", NetlifyCmsApp);
+        NetlifyCmsApp.init();
+      }
+    </script>
   </body>
 </html>

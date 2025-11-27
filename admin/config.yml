@@ -1,15 +1,19 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: jkojak825/project-wiki
   branch: main   # adjust if your default branch is different
 
 media_folder: "docs/images"
 public_folder: "/images"
 
 collections:
-  - name: "slug"
-    label: "Slug"
-    widget: "string"
-    hint: "Unique identifier for filename"
+  - name: "tags"
+    label: "Tags"
+    folder: "docs/tags"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: "body", label: "Tag", widget: "string" }
 
   - name: "logs"
     label: "Logs"

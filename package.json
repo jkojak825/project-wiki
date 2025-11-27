@@ -1,5 +1,11 @@
 {
+  "name": "project-wiki",
+  "version": "1.0.0",
   "dependencies": {
     "netlify-cms-app": "^2.15.72"
+  },
+  "overrides": {
+    "dompurify": "3.2.4",
+    "trim": "0.0.3"
   }
 }
