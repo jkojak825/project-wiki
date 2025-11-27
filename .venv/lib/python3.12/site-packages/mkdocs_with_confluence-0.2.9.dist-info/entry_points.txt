@@ -1,0 +1,2 @@
+[mkdocs.plugins]
+mkdocs-with-confluence = mkdocs_with_confluence.plugin:MkdocsWithConfluence
