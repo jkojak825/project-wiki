@@ -1,0 +1,105 @@
+backend:
+  name: github
+  repo: jkojak825/project-wiki
+  branch: main   # adjust if your default branch is different
+
+media_folder: "docs/images"
+public_folder: "/images"
+
+collections:
+  - name: "slug"
+    label: "Slug"
+    widget: "string"
+    hint: "Unique identifier for filename"
+
+  - name: "logs"
+    label: "Logs"
+    folder: "docs/logs"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "date", label: "Date", widget: "datetime" }
+      - { name: "tags", label: "Tags", widget: "relation", collection: "tags", search_fields: ["body"], value_field: "body", multiple: true, hint: "Pick tags from global taxonomy" }
+      - { name: "tasks", label: "Tasks", widget: "list", default: [""] }
+      - { name: "issues", label: "Issues", widget: "list", default: [""] }
+      - { name: "solutions", label: "Solutions", widget: "list", default: [""] }
+      - { name: "next_steps", label: "Next Steps", widget: "list", default: [""] }
+      - { name: "notes", label: "Notes", widget: "markdown", default: "- " }
+
+  - name: "stakeholders"
+    label: "Stakeholders"
+    folder: "docs/stakeholders"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: "name", label: "Name", widget: "string" }
+      - { name: "role", label: "Role", widget: "string" }
+      - { name: "slug", label: "Slug", widget: "string", hint: "Unique filename" }
+      - { name: "tags", label: "Tags", widget: "relation", collection: "tags", search_fields: ["body"], value_field: "body", multiple: true, hint: "Choose categories from global taxonomy" }
+      - { name: "responsibilities", label: "Responsibilities", widget: "list", default: [""] }
+      - { name: "notes", label: "Notes", widget: "markdown" }
+
+  - name: "troubleshooting"
+    label: "Troubleshooting"
+    folder: "docs/troubleshooting"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "tags", label: "Tags", widget: "relation", collection: "tags", search_fields: ["body"], value_field: "body", multiple: true, hint: "Choose categories from global taxonomy" }
+      - { name: "slug", label: "Slug", widget: "string", hint: "Unique filename" }
+      - { name: "symptoms", label: "Symptoms", widget: "list", default: [""] }
+      - { name: "root_cause", label: "Root Cause", widget: "markdown", default: "- " }
+      - { name: "fixes", label: "Fixes", widget: "list", default: [""] }
+      - { name: "verification", label: "Verification", widget: "markdown", default: "- " }
+
+  - name: "development"
+    label: "Development"
+    folder: "docs/development"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "tags", label: "Tags", widget: "relation", collection: "tags", search_fields: ["body"], value_field: "body", multiple: true, hint: "Choose categories from global taxonomy" }
+      - { name: "slug", label: "Slug", widget: "string", hint: "Unique filename" }
+      - { name: "objectives", label: "Objectives", widget: "list", default: [""] }
+      - { name: "design", label: "Design Notes", widget: "markdown", default: "- " }
+      - { name: "implementation", label: "Implementation Steps", widget: "list", default: [""] }
+      - { name: "testing", label: "Testing", widget: "markdown", default: "- " }
+
+  - name: "journaling"
+    label: "Journaling"
+    folder: "docs/journaling"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "tags", label: "Tags", widget: "relation", collection: "tags", search_fields: ["body"], value_field: "body", multiple: true, hint: "Choose categories from global taxonomy" }
+      - { name: "slug", label: "Slug", widget: "string", hint: "Unique filename" }
+      - { name: "reflection", label: "Reflection", widget: "markdown", default: "- " }
+      - { name: "insights", label: "Insights", widget: "list", default: [""] }
+      - { name: "actions", label: "Actions", widget: "list", default: [""] }
+
+  - name: "setup"
+    label: "Setup Guides"
+    folder: "docs/setup"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "tags", label: "Tags", widget: "relation", collection: "tags", search_fields: ["body"], value_field: "body", multiple: true, hint: "Choose categories from global taxonomy" }
+      - { name: "slug", label: "Slug", widget: "string", hint: "Unique filename" }
+      - { name: "prerequisites", label: "Prerequisites", widget: "list", default: [""] }
+      - { name: "steps", label: "Setup Steps", widget: "list", default: [""] }
+      - { name: "verification", label: "Verification", widget: "markdown", default: "- " }
+      - { name: "notes", label: "Notes", widget: "markdown", default: "- " }
+
+  - name: "tags"
+    label: "Tags"
+    files:
+      - file: "docs/tags.md"
+        label: "Tags"
+        name: "tags"
+        fields:
+          - { name: "body", label: "Body", widget: "markdown" }

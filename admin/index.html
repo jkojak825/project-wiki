@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Content Manager</title>
+    <script src="/admin/netlify-cms.js"></script>
+  </head>
+  <body>
+    <script>
+      // Sanity check: log whether NetlifyCmsApp is defined
+      if (typeof NetlifyCmsApp === "undefined") {
+        console.error("❌ NetlifyCmsApp is NOT defined. Check that netlify-cms.js is being served correctly.");
+      } else {
+        console.log("✅ NetlifyCmsApp is defined:", NetlifyCmsApp);
+        NetlifyCmsApp.init();
+      }
+    </script>
+  </body>
+</html>
