@@ -1,6 +1,6 @@
 [build]
   publish = "site"
-  command = "mkdocs build && cp -r admin site/"
+  command = "mkdocs build && cp -r docs/admin site/"
 
 [build.environment]
   PYTHON_VERSION = "3.13"
