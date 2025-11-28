@@ -1,3 +1,4 @@
+---
 backend:
   name: git-gateway
   repo: jkojak825/project-wiki
@@ -6,7 +7,6 @@ backend:
 media_folder: "docs/images"
 public_folder: "/images"
 
----
 collections:
   - name: "setup"
     label: "Setup Guides"
@@ -14,13 +14,13 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - { name: "title", label: "Title", widget: "string", required: false  }
-      - { name: "tags", label: "Tags", widget: "list", default: [""], required: false  }
-      - { name: "slug", label: "Slug", widget: "string", hint: "Unique filename", required: false  }
-      - { name: "prerequisites", label: "Prerequisites", widget: "list", default: [""], required: false  }
-      - { name: "steps", label: "Setup Steps", widget: "list", default: [""], required: false  }
-      - { name: "verification", label: "Verification", widget: "markdown", default: "- ", required: false }
-      - { name: "notes", label: "Notes", widget: "markdown", default: "- ", required: false }
+      - {name: "title", label: "Title", widget: "string", required: false}
+      - {name: "tags", label: "Tags", widget: "list", default: [""], required: false}
+      - {name: "slug", label: "Slug", widget: "string", hint: "Unique filename", required: false}
+      - {name: "prerequisites", label: "Prerequisites", widget: "list", default: [""], required: false}
+      - {name: "steps", label: "Setup Steps", widget: "list", default: [""], required: false}
+      - {name: "verification", label: "Verification", widget: "markdown", default: "- ", required: false}
+      - {name: "notes", label: "Notes", widget: "markdown", default: "- ", required: false}
 
   - name: "roadmap"
     label: "Roadmap"
@@ -28,14 +28,14 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - { name: "title", label: "Title", widget: "string", required: false }
-      - { name: "tags", label: "Tags", widget: "list", default: [""], required: false }
-      - { name: "slug", label: "Slug", widget: "string", hint: "Unique filename", required: false }
-      - { name: "milestones", label: "Milestones", widget: "list", default: [""], required: false }
-      - { name: "objectives", label: "Objectives", widget: "list", default: [""], required: false }
-      - { name: "timeline", label: "Timeline Notes", widget: "markdown", default: "- ", required: false }
-      - { name: "dependencies", label: "Dependencies", widget: "list", default: [""], required: false }
-      - { name: "status", label: "Status Updates", widget: "markdown", default: "- ", required: false }
+      - {name: "title", label: "Title", widget: "string", required: false}
+      - {name: "tags", label: "Tags", widget: "list", default: [""], required: false}
+      - {name: "slug", label: "Slug", widget: "string", hint: "Unique filename", required: false}
+      - {name: "milestones", label: "Milestones", widget: "list", default: [""], required: false}
+      - {name: "objectives", label: "Objectives", widget: "list", default: [""], required: false}
+      - {name: "timeline", label: "Timeline Notes", widget: "markdown", default: "- ", required: false}
+      - {name: "dependencies", label: "Dependencies", widget: "list", default: [""], required: false}
+      - {name: "status", label: "Status Updates", widget: "markdown", default: "- ", required: false}
 
   - name: "development"
     label: "Development"
@@ -43,13 +43,13 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - { name: "title", label: "Title", widget: "string", required: false  }
-      - { name: "tags", label: "Tags", widget: "list", default: [""], required: false  }
-      - { name: "slug", label: "Slug", widget: "string", hint: "Unique filename", required: false  }
-      - { name: "objectives", label: "Objectives", widget: "list", default: [""], required: false  }
-      - { name: "design", label: "Design Notes", widget: "markdown", default: "- ", required: false  }
-      - { name: "implementation", label: "Implementation Steps", widget: "list", default: [""], required: false  }
-      - { name: "testing", label: "Testing", widget: "markdown", default: "- ", required: false  }
+      - {name: "title", label: "Title", widget: "string", required: false}
+      - {name: "tags", label: "Tags", widget: "list", default: [""], required: false}
+      - {name: "slug", label: "Slug", widget: "string", hint: "Unique filename", required: false}
+      - {name: "objectives", label: "Objectives", widget: "list", default: [""], required: false}
+      - {name: "design", label: "Design Notes", widget: "markdown", default: "- ", required: false}
+      - {name: "implementation", label: "Implementation Steps", widget: "list", default: [""], required: false}
+      - {name: "testing", label: "Testing", widget: "markdown", default: "- ", required: false}
 
   - name: "logs"
     label: "Logs"
@@ -57,14 +57,14 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - { name: "title", label: "Title", widget: "string", required: false  }
-      - { name: "date", label: "Date", widget: "datetime", required: false  }
-      - { name: "tags", label: "Tags", widget: "list", default: [""], required: false  }
-      - { name: "tasks", label: "Tasks", widget: "list", default: [""], required: false  }
-      - { name: "issues", label: "Issues", widget: "list", default: [""], required: false  }
-      - { name: "solutions", label: "Solutions", widget: "list", default: [""], required: false  }
-      - { name: "next_steps", label: "Next Steps", widget: "list", default: [""], required: false  }
-      - { name: "notes", label: "Notes", widget: "markdown", default: "- ", required: false  }
+      - {name: "title", label: "Title", widget: "string", required: false}
+      - {name: "date", label: "Date", widget: "datetime", required: false}
+      - {name: "tags", label: "Tags", widget: "list", default: [""], required: false}
+      - {name: "tasks", label: "Tasks", widget: "list", default: [""], required: false}
+      - {name: "issues", label: "Issues", widget: "list", default: [""], required: false}
+      - {name: "solutions", label: "Solutions", widget: "list", default: [""], required: false}
+      - {name: "next_steps", label: "Next Steps", widget: "list", default: [""], required: false}
+      - {name: "notes", label: "Notes", widget: "markdown", default: "- ", required: false}
 
   - name: "troubleshooting"
     label: "Troubleshooting"
@@ -72,13 +72,13 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - { name: "title", label: "Title", widget: "string", required: false  }
-      - { name: "tags", label: "Tags", widget: "list", default: [""], required: false  }
-      - { name: "slug", label: "Slug", widget: "string", hint: "Unique filename", required: false  }
-      - { name: "symptoms", label: "Symptoms", widget: "list", default: [""], required: false  }
-      - { name: "root_cause", label: "Root Cause", widget: "markdown", default: "- ", required: false  }
-      - { name: "fixes", label: "Fixes", widget: "list", default: [""], required: false  }
-      - { name: "verification", label: "Verification", widget: "markdown", default: "- ", required: false  }
+      - {name: "title", label: "Title", widget: "string", required: false}
+      - {name: "tags", label: "Tags", widget: "list", default: [""], required: false}
+      - {name: "slug", label: "Slug", widget: "string", hint: "Unique filename", required: false}
+      - {name: "symptoms", label: "Symptoms", widget: "list", default: [""], required: false}
+      - {name: "root_cause", label: "Root Cause", widget: "markdown", default: "- ", required: false}
+      - {name: "fixes", label: "Fixes", widget: "list", default: [""], required: false}
+      - {name: "verification", label: "Verification", widget: "markdown", default: "- ", required: false}
 
   - name: "tags"
     label: "Tags"
@@ -86,4 +86,4 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - { name: "body", label: "Tag", widget: "string" }
+      - {name: "body", label: "Tag", widget: "string"}
