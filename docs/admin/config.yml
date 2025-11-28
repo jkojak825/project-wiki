@@ -1,4 +1,4 @@
- - { name: "tags", label: "Tags", widget: "relation", collection: "tags", search_fields: ["body"], value_field: "body", multiple: true, hint: "Pick tags from global taxonomy" }backend:
+backend:
   name: git-gateway
   repo: jkojak825/project-wiki
   branch: main   # adjust if your default branch is different
@@ -6,6 +6,7 @@
 media_folder: "docs/images"
 public_folder: "/images"
 
+---
 collections:
   - name: "setup"
     label: "Setup Guides"
