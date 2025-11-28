@@ -1,5 +1,5 @@
 backend:
-  name: github
+  name: git-gateway
   repo: jkojak825/project-wiki
   branch: main   # adjust if your default branch is different
 
