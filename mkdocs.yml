@@ -38,5 +38,4 @@ extra_templates: []
 docs_dir: docs
 
 extra_javascript:
-  - admin/index.html
-
+  - js/custom.js

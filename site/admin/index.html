@@ -3,11 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <title>Content Manager</title>
-    <script src="https://unpkg.com/netlify-cms-app@^2.15.0/dist/netlify-cms.js"></script>
+    <!-- Add Netlify Identity Widget -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body>
+    <!-- Load Netlify CMS -->
+    <script src="./netlify-cms-app.js"></script>
     <script>
-      // Sanity check: log whether NetlifyCmsApp is defined
       if (typeof NetlifyCmsApp === "undefined") {
         console.error("❌ NetlifyCmsApp is NOT defined. Check that netlify-cms.js is being served correctly.");
       } else {
@@ -16,4 +18,4 @@
       }
     </script>
   </body>
-</html>
+</html>   
