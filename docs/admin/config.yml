@@ -15,7 +15,7 @@ collections:
     slug: "{{slug}}"
     fields:
       - {name: "title", label: "Title", widget: "string", required: false}
-      - {name: "tags", label: "Tags", widget: "list", default: [""], required: false}
+      - {name: "tags", label: "Tags", widget: "relation", default: [""], required: false}
       - {name: "slug", label: "Slug", widget: "string", hint: "Unique filename", required: false}
       - {name: "prerequisites", label: "Prerequisites", widget: "list", default: [""], required: false}
       - {name: "steps", label: "Setup Steps", widget: "list", default: [""], required: false}
@@ -29,7 +29,7 @@ collections:
     slug: "{{slug}}"
     fields:
       - {name: "title", label: "Title", widget: "string", required: false}
-      - {name: "tags", label: "Tags", widget: "list", default: [""], required: false}
+      - {name: "tags", label: "Tags", widget: "relation", default: [""], required: false}
       - {name: "slug", label: "Slug", widget: "string", hint: "Unique filename", required: false}
       - {name: "milestones", label: "Milestones", widget: "list", default: [""], required: false}
       - {name: "objectives", label: "Objectives", widget: "list", default: [""], required: false}
@@ -44,7 +44,7 @@ collections:
     slug: "{{slug}}"
     fields:
       - {name: "title", label: "Title", widget: "string", required: false}
-      - {name: "tags", label: "Tags", widget: "list", default: [""], required: false}
+      - {name: "tags", label: "Tags", widget: "relation", default: [""], required: false}
       - {name: "slug", label: "Slug", widget: "string", hint: "Unique filename", required: false}
       - {name: "objectives", label: "Objectives", widget: "list", default: [""], required: false}
       - {name: "design", label: "Design Notes", widget: "markdown", default: "- ", required: false}
@@ -59,7 +59,7 @@ collections:
     fields:
       - {name: "title", label: "Title", widget: "string", required: false}
       - {name: "date", label: "Date", widget: "datetime", required: false}
-      - {name: "tags", label: "Tags", widget: "list", default: [""], required: false}
+      - {name: "tags", label: "Tags", widget: "relation", default: [""], required: false}
       - {name: "tasks", label: "Tasks", widget: "list", default: [""], required: false}
       - {name: "issues", label: "Issues", widget: "list", default: [""], required: false}
       - {name: "solutions", label: "Solutions", widget: "list", default: [""], required: false}
@@ -73,7 +73,7 @@ collections:
     slug: "{{slug}}"
     fields:
       - {name: "title", label: "Title", widget: "string", required: false}
-      - {name: "tags", label: "Tags", widget: "list", default: [""], required: false}
+      - {name: "tags", label: "Tags", widget: "relation", default: [""], required: false}
       - {name: "slug", label: "Slug", widget: "string", hint: "Unique filename", required: false}
       - {name: "symptoms", label: "Symptoms", widget: "list", default: [""], required: false}
       - {name: "root_cause", label: "Root Cause", widget: "markdown", default: "- ", required: false}
@@ -86,4 +86,6 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - {name: "body", label: "Tag", widget: "string"}
+      - {name: "title", label: "Tag", widget: "string"}
+      - {name: "description", label: "Description", widget: "markdown", required: false}
+
