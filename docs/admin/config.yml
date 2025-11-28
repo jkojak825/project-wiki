@@ -80,12 +80,11 @@ collections:
       - {name: "fixes", label: "Fixes", widget: "list", default: [""], required: false}
       - {name: "verification", label: "Verification", widget: "markdown", default: "- ", required: false}
 
-  - name: "tags"
-    label: "Tags"
-    folder: "docs/tags"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {name: "title", label: "Tag", widget: "string"}
-      - {name: "description", label: "Description", widget: "markdown", required: false}
-
+- name: "tags"
+  label: "Tags"
+  widget: "relation"
+  collection: "tags"
+  search_fields: ["title"]
+  value_field: "title"
+  multiple: true
+  required: false
